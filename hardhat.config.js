@@ -13,7 +13,7 @@ const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || "key"
 module.exports = {
     // solidity: "0.8.8",
     solidity: {
-        compilers: [{ version: "0.8.8" }, { version: "0.6.6" }],
+        compilers: [{ version: "0.8.8" }, { version: "0.6.6" }]
     },
     defaultNetwork: "hardhat",
     networks: {
@@ -21,16 +21,16 @@ module.exports = {
             url: GOERLI_RPC_URL,
             accounts: [PRIVATE_KEY],
             chainId: 5,
-            blockConfirmations: 6,
+            blockConfirmations: 6
         },
         localhost: {
             url: "http://127.0.0.1:8545/",
             // accounts: hardhat already placed
-            chainId: 31337,
-        },
+            chainId: 31337
+        }
     },
     etherscan: {
-        apiKey: ETHERSCAN_API_KEY,
+        apiKey: ETHERSCAN_API_KEY
     },
     gasReporter: {
         enabled: true,
@@ -38,12 +38,12 @@ module.exports = {
         noColors: true,
         currency: "USD",
         coinmarketcap: COINMARKETCAP_API_KEY,
-        token: "MATIC",
+        token: "MATIC"
     },
     namedAccounts: {
         deployer: {
             default: 0, // here this will by default take the first account as deployer
-            1: 0, // similarly on mainnet it will take the first account as deployer. Note though that depending on how hardhat network are configured, the account 0 on one network can be different than on another
-        },
-    },
+            1: 0 // similarly on mainnet it will take the first account as deployer. Note though that depending on how hardhat network are configured, the account 0 on one network can be different than on another
+        }
+    }
 }
